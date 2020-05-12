@@ -1,6 +1,0 @@
-D:\DOT NET CORE REPO\DataAccessWithRepository\bin\Debug\netcoreapp3.1\DataAccessWithRepository.deps.json
-D:\DOT NET CORE REPO\DataAccessWithRepository\bin\Debug\netcoreapp3.1\DataAccessWithRepository.dll
-D:\DOT NET CORE REPO\DataAccessWithRepository\obj\Debug\netcoreapp3.1\DataAccessWithRepository.csprojAssemblyReference.cache
-D:\DOT NET CORE REPO\DataAccessWithRepository\obj\Debug\netcoreapp3.1\DataAccessWithRepository.AssemblyInfoInputs.cache
-D:\DOT NET CORE REPO\DataAccessWithRepository\obj\Debug\netcoreapp3.1\DataAccessWithRepository.AssemblyInfo.cs
-D:\DOT NET CORE REPO\DataAccessWithRepository\obj\Debug\netcoreapp3.1\DataAccessWithRepository.csproj.CoreCompileInputs.cache

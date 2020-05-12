@@ -1,0 +1,33 @@
+﻿@model EmployeeManagementCore.ViewModels.PostViewModel
+@inject UserManager<IdentityUser> userManager
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<h4>Create Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" asp-controller="Post" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="post" class="control-label"></label>
+                <textarea asp-for="post" class="form-control"></textarea>
+                <span asp-validation-for="post" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="post_id" />    
+            <input type="hidden" asp-for="user_id" value="@userManager.GetUserId(User)" />
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

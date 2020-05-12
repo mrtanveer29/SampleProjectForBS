@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "ViewPosts";
+}
+
+<h2>ViewPosts</h2>
+
+<div class="container">
+    <div id="post">
+        
+
+
+
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" onclick="loadData(1)">1</a></li>
+            <li class="page-item"><a class="page-link" onclick="loadData(2)">2</a></li>
+            <li class="page-item"><a class="page-link" onclick="loadData(3)">3</a></li>
+        </ul>
+    </nav>
+</div>
+@section scripts{
+    <script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/Post/GetPost",
+            type: "Get",
+            data: { 'page': 1 },
+            success(data) {
+                loadPost(data);
+
+            }
+
+        })
+    });
+    function loadPost() {
+        var post = "";
+
+        $.each(data, function (i, val) {
+            post += '   <div class="card">  ' +
+                '           <div class="card-header">  ' +
+                '               <h4>' + val.post + '</h4>  ';
+            '              </div>  ';
+            //var comment = "";
+            $.each(val.comments, function (ind, comments) {
+                post += '   <div class="card-body">  ' +
+                    '               <p class="card-text" id="comment">' + comments.comment + '</p>  ' +
+                    '               <button id="like_' + comment.comment_id + '">Like</button>  ' +
+                    '               <button id="dislike_' + comment.comment_id + '">Dislike</button>  ' +
+                    '     ' +
+                    '          </div>  ';
+            });
+            post += '    <div class="row">  ' +
+                '               <div class="col-md-2"> <textarea id="comment_box"></textarea></div>  ' +
+                '               <div class="col-md-2"><button id="submit_comment">ok</button></div>  ' +
+                '          </div>  ';
+            '           </div>  ';
+
+        });
+        $('$post').html(post);
+    }
+    function loadData(page) {
+        $.ajax({
+            url: "/Post/GetPost",
+            type: "Get",
+            data: {'page':page},
+            success(data) {
+                loadPost(data);
+
+            }
+
+        })
+    }
+    </script>
+}
